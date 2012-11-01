@@ -1,5 +1,5 @@
 Name:		libkgapi
-Version:	0.4.1
+Version:	0.4.3
 Release:	1
 Summary:	Library to access various Google services via their public API
 License:	GPLv2+
