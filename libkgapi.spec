@@ -3,7 +3,7 @@
 %define devname %mklibname -d kgapi
 
 Summary:	Library to access various Google services via their public API
-Name:		libname
+Name:		libkgapi
 Version:	0.4.3
 Release:	1
 License:	GPLv2+
@@ -33,13 +33,13 @@ Group:		System/Libraries
 Runtime Library for %{name}
 
 %package -n %{devname}
-Summary:	Devel files for libname
+Summary:	Devel files for	libkgapi
 Group:		Development/KDE and Qt
 Provides:	%{name}-devel = %{EVRD}
 Requires:	%{libname} = %{EVRD}
 
 %description -n %{devname}
-Devel files for libname
+Devel files for	libkgapi
 
 %prep
 %setup -q
@@ -52,11 +52,11 @@ Devel files for libname
 %makeinstall_std -C build
 
 %files -n %{libname}
-%{_kde_libdir}/libname.so.%{major}*
+%{_kde_libdir}/libkgapi.so.%{major}*
 
 %files -n %{devname}
-%{_kde_libdir}/libname.so
-%{_kde_includedir}/libname
-%{_kde_libdir}/pkgconfig/libname.pc
+%{_kde_libdir}/libkgapi.so
+%{_kde_includedir}/libkgapi
+%{_kde_libdir}/pkgconfig/libkgapi.pc
 %{_kde_libdir}/cmake/LibKGAPI
 
