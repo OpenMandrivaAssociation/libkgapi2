@@ -1,11 +1,11 @@
 Summary:	Library to access various Google services via their public API
 Name:		libkgapi
-Version:	2.0.1
-Release:	5
+Version:	2.0.2
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://progdan.cz/category/akonadi-google/
-Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.bz2
+Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	boost-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdepimlibs4-devel
