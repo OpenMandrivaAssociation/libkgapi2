@@ -1,11 +1,12 @@
 Summary:	Library to access various Google services via their public API
 Name:		libkgapi
-Version:	2.0.2
+Version:	2.1.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://progdan.cz/category/akonadi-google/
-Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.bz2
+Patch0:		libkgapi-2.1.0-pkgconfig.patch
 BuildRequires:	boost-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdepimlibs4-devel
@@ -20,22 +21,10 @@ Currently supported APIs:
   - Calendar API v3 (https://developers.google.com/google-apps/calendar)
   - Contacts API v3 (https://developers.google.com/google-apps/contacts/v3/)
   - Tasks API v1 (https://developers.google.com/google-apps/tasks)
-
-#----------------------------------------------------------------------------
-
-%define major 1
-%define libname %mklibname kgapi %{major}
-
-%package -n %{libname}
-Summary:	Runtime library for %{name}
-Group:		System/Libraries
-
-%description -n %{libname}
-Runtime Library for %{name}.
-
-%files -n %{libname}
-%{_kde_libdir}/libkgapi.so.%{major}
-%{_kde_libdir}/libkgapi.so.%{version}
+  - Latitude API v1 (https://developers.google.com/latitude/v1/)
+  - Static Google Maps API v2
+    (https://developers.google.com/maps/documentation/staticmaps/)
+  - Drive API v2 (https://developers.google.com/drive/v2/reference)
 
 #----------------------------------------------------------------------------
 
@@ -61,14 +50,12 @@ Runtime Library for %{name}.
 Summary:	Development files for libkgapi
 Group:		Development/KDE and Qt
 Provides:	%{name}-devel = %{EVRD}
-Requires:	%{libname} = %{EVRD}
 Requires:	%{libname2} = %{EVRD}
 
 %description -n %{devname}
 Development files for libkgapi.
 
 %files -n %{devname}
-%{_kde_libdir}/libkgapi.so
 %{_kde_libdir}/libkgapi2.so
 %{_kde_includedir}/*
 %{_kde_libdir}/pkgconfig/*.pc
@@ -78,6 +65,7 @@ Development files for libkgapi.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %cmake_kde4
