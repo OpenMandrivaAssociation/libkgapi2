@@ -1,7 +1,7 @@
-diff -urN libkgapi-2.1.0/libkgapi2/CMakeLists.txt libkgapi-2.1.0-patched/libkgapi2/CMakeLists.txt
---- libkgapi-2.1.0/libkgapi2/CMakeLists.txt	2014-03-02 04:30:47.000000000 +1100
-+++ libkgapi-2.1.0-patched/libkgapi2/CMakeLists.txt	2014-03-04 20:12:14.166719818 +1100
-@@ -304,6 +304,11 @@
+diff -urN libkgapi-2.2.0/libkgapi2/CMakeLists.txt libkgapi-2.2.0-patched/libkgapi2/CMakeLists.txt
+--- libkgapi-2.2.0/libkgapi2/CMakeLists.txt	2014-07-22 00:47:21.000000000 +1100
++++ libkgapi-2.2.0-patched/libkgapi2/CMakeLists.txt	2014-09-30 23:55:49.414072567 +1100
+@@ -351,6 +351,11 @@
  install(FILES ${LibKGAPI_tasks_HDRS} DESTINATION ${INCLUDE_INSTALL_DIR}/libkgapi2/tasks)
  install(FILES ${LibKGAPI_ui_HDRS} DESTINATION ${INCLUDE_INSTALL_DIR}/libkgapi2/ui)
  
@@ -13,9 +13,9 @@ diff -urN libkgapi-2.1.0/libkgapi2/CMakeLists.txt libkgapi-2.1.0-patched/libkgap
  # === CMake stuff
  
  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/LibKGAPI2Config.cmake.in
-diff -urN libkgapi-2.1.0/libkgapi2/libkgapi.pc.cmake libkgapi-2.1.0-patched/libkgapi2/libkgapi.pc.cmake
---- libkgapi-2.1.0/libkgapi2/libkgapi.pc.cmake	1970-01-01 10:00:00.000000000 +1000
-+++ libkgapi-2.1.0-patched/libkgapi2/libkgapi.pc.cmake	2014-03-04 20:10:36.029925987 +1100
+diff -urN libkgapi-2.2.0/libkgapi2/libkgapi.pc.cmake libkgapi-2.2.0-patched/libkgapi2/libkgapi.pc.cmake
+--- libkgapi-2.2.0/libkgapi2/libkgapi.pc.cmake	1970-01-01 10:00:00.000000000 +1000
++++ libkgapi-2.2.0-patched/libkgapi2/libkgapi.pc.cmake	2014-09-30 23:55:49.414072567 +1100
 @@ -0,0 +1,12 @@
 +prefix=${CMAKE_INSTALL_PREFIX}
 +exec_prefix=${BIN_INSTALL_DIR}
