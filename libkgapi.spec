@@ -29,23 +29,19 @@ Currently supported APIs:
     (https://developers.google.com/maps/documentation/staticmaps/)
   - Drive API v2 (https://developers.google.com/drive/v2/reference)
 
-#----------------------------------------------------------------------------
+%files -f libkgapi_qt.lang
+%{_sysconfdir}/xdg/libkgapi.categories
+%{_libname}/qt5/mkspecs/modules/*.pri
 
-%define major2 2
-%define libname2 %mklibname kgapi2_ %{major2}
 
-%package -n %{libname2}
-Summary:	Runtime library for %{name}
-Group:		System/Libraries
-
-%description -n %{libname2}
-Runtime Library for %{name}.
-
-%files -n %{libname2}
-%{_kde_libdir}/libkgapi2.so.%{major2}
-%{_kde_libdir}/libkgapi2.so.%{version}
-
-#----------------------------------------------------------------------------
+%dependinglibpackage KF5GAPIBlogger 5
+%dependinglibpackage KF5GAPICalendar 5
+%dependinglibpackage KF5GAPIContacts 5
+%dependinglibpackage KF5GAPICore 5
+%dependinglibpackage KF5GAPIDrive 5
+%dependinglibpackage KF5GAPILatitude 5
+%dependinglibpackage KF5GAPIMaps 5
+%dependinglibpackage KF5GAPITasks 5
 
 %define devname %mklibname kgapi -d
 
@@ -53,16 +49,32 @@ Runtime Library for %{name}.
 Summary:	Development files for libkgapi
 Group:		Development/KDE and Qt
 Provides:	%{name}-devel = %{EVRD}
-Requires:	%{libname2} = %{EVRD}
+Requires:	%{mklibname KF5GAPIBlogger 5} = %{EVRD}
+Requires:	%{mklibname KF5GAPICalendar 5} = %{EVRD}
+Requires:	%{mklibname KF5GAPIContacts 5} = %{EVRD}
+Requires:	%{mklibname KF5GAPICore 5} = %{EVRD}
+Requires:	%{mklibname KF5GAPIDrive 5} = %{EVRD}
+Requires:	%{mklibname KF5GAPILatitude 5} = %{EVRD}
+Requires:	%{mklibname KF5GAPIMaps 5} = %{EVRD}
+Requires:	%{mklibname KF5GAPITasks 5} = %{EVRD}
 
 %description -n %{devname}
 Development files for libkgapi.
 
 %files -n %{devname}
-%{_kde_libdir}/libkgapi2.so
-%{_kde_includedir}/*
-%{_kde_libdir}/pkgconfig/*.pc
-%{_kde_libdir}/cmake/*
+%dir %{_includedir}/KF5/KGAPI
+%{_includedir}/KF5/KGAPI/KGAPI
+%{_includedir}/KF5/KGAPI/kgapi
+%{_includedir}/KF5/kgapi_version.h
+%{_libdir}/libKF5GAPIBlogger.so
+%{_libdir}/libKF5GAPICalendar.so
+%{_libdir}/libKF5GAPIContacts.so
+%{_libdir}/libKF5GAPICore.so
+%{_libdir}/libKF5GAPIDrive.so
+%{_libdir}/libKF5GAPILatitude.so
+%{_libdir}/libKF5GAPIMaps.so
+%{_libdir}/libKF5GAPITasks.so
+%{_libdir}/cmake/KF5GAPI/*.cmake
 
 #----------------------------------------------------------------------------
 
@@ -76,3 +88,4 @@ Development files for libkgapi.
 %install
 %ninja_install -C build
 
+%find_lang libkgapi_qt
