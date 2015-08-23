@@ -1,17 +1,21 @@
 Summary:	Library to access various Google services via their public API
 Name:		libkgapi
-Version:	2.2.0
-Release:	3
+Version:	5.0.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://progdan.cz/category/akonadi-google/
 Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.bz2
 Patch0:		libkgapi-2.2.0-pkgconfig.patch
-BuildRequires:	boost-devel
-BuildRequires:	kdelibs4-devel
-BuildRequires:	kdepimlibs4-devel >= 3:4.13.80
-BuildRequires:	qt4-devel
-BuildRequires:	pkgconfig(QJson)
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5CalendarCore)
+BuildRequires:	cmake(KF5Contacts)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5WebKitWidgets)
+BuildRequires:	cmake(Qt5Xml)
+BuildRequires:	cmake(Qt5Test)
 
 %description
 LibKGAPI (previously called LibKGoogle) is a C++ library that implements APIs
@@ -65,12 +69,11 @@ Development files for libkgapi.
 
 %prep
 %setup -q
-%patch0 -p1
+%cmake_kde5
 
 %build
-%cmake_kde4
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
