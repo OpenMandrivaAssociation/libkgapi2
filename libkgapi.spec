@@ -4,8 +4,8 @@ Version:	5.0.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://progdan.cz/category/akonadi-google/
-Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.bz2
+Url:		http://www.dvratil.cz/category/akonadi-google/
+Source0:	http://download.kde.org/stable/libkgapi/%{version}/src/%{name}-%{version}.tar.xz
 Patch0:		libkgapi-2.2.0-pkgconfig.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5CoreAddons)
