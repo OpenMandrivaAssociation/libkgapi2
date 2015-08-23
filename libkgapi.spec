@@ -31,7 +31,6 @@ Currently supported APIs:
 
 %files
 %{_sysconfdir}/xdg/libkgapi.categories
-%{_libname}/qt5/mkspecs/modules/*.pri
 %lang(mr) %{_localedir}/mr/LC_MESSAGES/libkgapi_qt.qm
 %lang(nds) %{_localedir}/nds/LC_MESSAGES/libkgapi_qt.qm
 %lang(gl) %{_localedir}/gl/LC_MESSAGES/libkgapi_qt.qm
@@ -115,6 +114,7 @@ Development files for libkgapi.
 %{_libdir}/libKF5GAPIMaps.so
 %{_libdir}/libKF5GAPITasks.so
 %{_libdir}/cmake/KF5GAPI/*.cmake
+%{_libdir}/qt5/mkspecs/modules/*.pri
 
 #----------------------------------------------------------------------------
 
