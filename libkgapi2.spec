@@ -6,7 +6,7 @@ Version:	2.2.0
 Release:	5
 License:	GPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://progdan.cz/category/akonadi-google/
+Url:		https://progdan.cz/category/akonadi-google/
 Source0:	http://download.kde.org/stable/%{oname}/%{version}/src/%{oname}-%{version}.tar.bz2
 Patch0:		libkgapi-2.2.0-pkgconfig.patch
 BuildRequires:	boost-devel
