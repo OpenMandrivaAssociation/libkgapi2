@@ -9,6 +9,7 @@ Group:		Graphical desktop/KDE
 Url:		https://progdan.cz/category/akonadi-google/
 Source0:	http://download.kde.org/stable/%{oname}/%{version}/src/%{oname}-%{version}.tar.bz2
 Patch0:		libkgapi-2.2.0-pkgconfig.patch
+BuildRequires:	make
 BuildRequires:	boost-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdepimlibs4-devel >= 3:4.13.80
